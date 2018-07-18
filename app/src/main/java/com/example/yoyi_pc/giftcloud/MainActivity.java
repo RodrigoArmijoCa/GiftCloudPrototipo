@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.view.MenuItem;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
 
@@ -20,35 +19,35 @@ public class MainActivity extends AppCompatActivity implements fragmentoPesta.On
     static ArrayList<String> listaDeNomPesta = new ArrayList<String>();
     static ArrayList<ArrayList<String>> listaDeNomSubPesta  = new ArrayList<ArrayList<String>>();
     static ArrayList<ArrayList<ArrayList<Mision>>> listaDeContSubPesta  = new ArrayList<ArrayList<ArrayList<Mision>>>();
-//    private DrawerLayout dl;
-//    private ActionBarDrawerToggle abdt;
+    private DrawerLayout dl;
+    private ActionBarDrawerToggle abdt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        dl = (DrawerLayout) findViewById(R.id.dl);
-//        abdt = new ActionBarDrawerToggle(this,dl,R.string.Open,R.string.Close);
-//        abdt.setDrawerIndicatorEnabled(true);
-//        dl.addDrawerListener(abdt);
-//        abdt.syncState();
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        NavigationView nav_view = (NavigationView) findViewById(R.id.nav_view);
-//        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                int id = item.getItemId();
-//                if(id == R.id.perfil)
-//                {
-//                    Toast.makeText(MainActivity.this, "Mi perfil", Toast.LENGTH_SHORT).show();
-//                }
-//                else if(id == R.id.tienda)
-//                {
-//                    Toast.makeText(MainActivity.this, "Tienda", Toast.LENGTH_SHORT).show();
-//                }
-//                return true;
-//            }
-//        });
+        dl = (DrawerLayout) findViewById(R.id.dl);
+        abdt = new ActionBarDrawerToggle(this,dl,R.string.Open,R.string.Close);
+        abdt.setDrawerIndicatorEnabled(true);
+        dl.addDrawerListener(abdt);
+        abdt.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        NavigationView nav_view = (NavigationView) findViewById(R.id.nav_view);
+        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                if(id == R.id.perfil)
+                {
+                    Toast.makeText(MainActivity.this, "Mi perfil", Toast.LENGTH_SHORT).show();
+                }
+                else if(id == R.id.tienda)
+                {
+                    Toast.makeText(MainActivity.this, "Tienda", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        });
         iniciaNombrePesta();
         iniciaNombreSubPesta();
         iniciaContSubPesta();
