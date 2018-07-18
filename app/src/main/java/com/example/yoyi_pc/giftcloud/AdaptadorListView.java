@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -62,6 +63,13 @@ public class AdaptadorListView extends BaseAdapter {
 
         TextView description = (TextView) v.findViewById(R.id.descripcion);
         description.setText(dir.getDescripcion());
+
+        ImageView imagen = (ImageView) v.findViewById(R.id.imagen);
+
+
+        Context context = imagen.getContext();
+        int id = context.getResources().getIdentifier(dir.getNombreImagen(), "drawable", context.getPackageName());
+        imagen.setImageResource(id);
 
         return v;
     }

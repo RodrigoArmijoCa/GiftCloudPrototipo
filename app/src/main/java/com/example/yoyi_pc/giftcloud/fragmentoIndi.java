@@ -77,11 +77,6 @@ public class fragmentoIndi extends Fragment {
             indexPadre = getArguments().getInt("indexPadre");
             indexHijo = getArguments().getInt("indexHijo");
         }
-
-        TextView mayorin = vista.findViewById(R.id.mayorin);
-        String csm = "Num: " + indexPadre + "-" + indexHijo;
-        mayorin.setText(csm);
-
         ArrayList<ArrayList<Mision>> lista = MainActivity.listaDeContSubPesta.get(indexPadre);
         ArrayList<Mision> lista1 = lista.get(indexHijo);
         ListView lv = (ListView) vista.findViewById(R.id.listadeelementos);

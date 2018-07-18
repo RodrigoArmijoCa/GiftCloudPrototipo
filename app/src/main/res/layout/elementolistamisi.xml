@@ -3,19 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imagen"
+        android:layout_width="80sp"
+        android:src="@drawable/logoempresa"
+        android:layout_height="80sp"/>
     <TextView
+        android:layout_marginLeft="100sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Texto Frase"
-        android:id="@+id/nombre"
-        android:layout_below="@+id/descripcion"/>
+        android:id="@+id/descripcion"
+        android:layout_below="@+id/nombre"/>
 
     <TextView
+        android:layout_marginLeft="100sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Titulo Frase"
-        android:id="@+id/descripcion"
+        android:id="@+id/nombre"
         android:textSize="21sp"
         android:textColor="#f65034"
         android:layout_alignParentTop="true"/>
