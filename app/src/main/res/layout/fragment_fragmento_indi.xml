@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yoyi_pc.giftcloud.fragmentoIndi">
+
+    <TextView
+        android:id="@+id/mayorin"
+        android:layout_width="match_parent"
+        android:layout_height="20sp"
+        android:text="ASDDSDASDASDAASD"/>
+
+    <ListView
+        android:id="@+id/listadeelementos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>
