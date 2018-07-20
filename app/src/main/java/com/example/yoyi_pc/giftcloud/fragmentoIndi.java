@@ -31,7 +31,6 @@ public class fragmentoIndi extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private Handler handler = new Handler();
-    private View fishqlo;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -62,7 +61,8 @@ public class fragmentoIndi extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -84,7 +84,6 @@ public class fragmentoIndi extends Fragment {
         ArrayList<ArrayList<Mision>> lista = MainActivity.listaDeContSubPesta.get(indexPadre);
         final ArrayList<Mision> lista1 = lista.get(indexHijo);
         final ListView lv = vista.findViewById(R.id.listadeelementos);
-        fishqlo = vista;
         final AdaptadorListView adapter = new AdaptadorListView(getActivity(), lista1);
         lv.setAdapter(adapter);
 
@@ -164,7 +163,17 @@ public class fragmentoIndi extends Fragment {
                                         misionCompletada.setVisibility(View.VISIBLE);
                                     }
                                 });
-
+                                handler.post(new Runnable()
+                                {
+                                    public void run()
+                                    {
+                                    TextView text = MainActivity.vista.findViewById(R.id.valorGiftCoins);
+                                    int valor = Integer.parseInt((String) text.getText());
+                                    valor += 1;
+                                    String valorString = valor + "";
+                                    text.setText(valorString);
+                                    }
+                                });
                             }
                         }).start();
 

@@ -5,11 +5,13 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 import java.util.ArrayList;
 
@@ -22,10 +24,17 @@ public class MainActivity extends AppCompatActivity implements fragmentoPesta.On
     static ArrayList<ArrayList<ArrayList<Mision>>> listaMiniMisiones = new ArrayList<ArrayList<ArrayList<Mision>>>();
     private DrawerLayout dl;
     private ActionBarDrawerToggle abdt;
+    static public ActionBar barritaSuperior;
+    static public View vista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.custom_action_bar);
+        barritaSuperior = getSupportActionBar();
+        vista = getSupportActionBar().getCustomView();
         setContentView(R.layout.activity_main);
         dl = (DrawerLayout) findViewById(R.id.dl);
         abdt = new ActionBarDrawerToggle(this,dl,R.string.Open,R.string.Close);
