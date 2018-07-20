@@ -3,14 +3,19 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/BurlyWood</item>
+        <item name="colorPrimaryDark">@color/LightCoral</item>
+        <item name="colorAccent">@color/PaleVioletRed</item>
     </style>
 
     <style name="boton" parent="Theme.AppCompat.Light">
         <item name="colorControlHighlight">@color/Indigo</item>
         <item name="colorButtonNormal">@color/Pink</item>
+    </style>
+
+    <style name="barritaDeCarga" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/ForestGreen</item>
+        <item name="android:progressBackgroundTint">@color/Turquoise</item>
     </style>
 
 </resources>

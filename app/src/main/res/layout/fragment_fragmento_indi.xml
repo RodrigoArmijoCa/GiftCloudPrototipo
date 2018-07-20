@@ -8,15 +8,16 @@
     <ListView
         android:id="@+id/listadeelementos"
         android:layout_width="wrap_content"
-        android:layout_height="350sp" />
+        android:theme="@style/boton"
+        android:layout_height="450sp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/botonHacerMision"
-        android:layout_marginLeft="90sp"
-        android:textSize="10sp"
-        android:theme="@style/boton"
+        android:layout_marginLeft="60sp"
+        android:textSize="14sp"
+        android:theme="@style/AppTheme"
         android:text="Realizar en segundo plano"/>
 
 </LinearLayout>

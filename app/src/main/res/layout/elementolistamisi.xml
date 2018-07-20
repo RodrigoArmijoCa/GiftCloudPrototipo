@@ -8,46 +8,55 @@
     <ImageView
         android:id="@+id/imagen"
         android:layout_width="80sp"
-        android:src="@drawable/logoempresa"
-        android:layout_height="80sp"/>
+        android:layout_height="80sp"
+        android:layout_alignBottom="@+id/progressBar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/logoempresa" />
     <TextView
         android:layout_marginLeft="100sp"
         android:layout_width="180sp"
         android:layout_height="wrap_content"
         android:text="Texto Frase"
+        android:textColor="#FFA500"
         android:id="@+id/descripcion"
         android:layout_below="@+id/nombre"/>
 
     <TextView
-        android:layout_marginLeft="100sp"
+        android:id="@+id/nombre"
         android:layout_width="180sp"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/descripcion"
         android:text="Titulo Frase"
-        android:id="@+id/nombre"
-        android:textSize="21sp"
-        android:textColor="#f65034"
-        android:layout_alignParentTop="true"/>
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FF6347"
+        android:textSize="20sp" />
 
     <ProgressBar
-    android:layout_below="@id/descripcion"
-    android:layout_marginLeft="100sp"
-    android:id="@+id/progressBar"
-    style="?android:attr/progressBarStyleHorizontal"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:indeterminate="false"
-    android:max="100"
-    android:minHeight="50dp"
-    android:minWidth="200dp"
-    android:progress="1"
-    android:visibility="invisible"/>
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:theme="@style/barritaDeCarga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/descripcion"
+        android:layout_below="@+id/descripcion"
+        android:indeterminate="false"
+        android:max="100"
+        android:minHeight="50dp"
+        android:minWidth="200dp"
+        android:progress="1"
+        android:visibility="invisible" />
 
     <TextView
         android:layout_below="@id/descripcion"
         android:layout_marginLeft="100sp"
         android:id="@+id/misionCompletada"
         android:text="Mision Completada"
+        android:theme="@style/boton"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#7CFC00"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"/>
@@ -56,6 +65,8 @@
         android:id="@+id/boton"
         android:layout_width="40sp"
         android:layout_height="40sp"
-        android:layout_toRightOf="@+id/descripcion"/>
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/nombre"
+        android:layout_marginEnd="13dp" />
 
 </RelativeLayout>
