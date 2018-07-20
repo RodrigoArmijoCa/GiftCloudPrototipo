@@ -1,15 +1,17 @@
 package com.example.yoyi_pc.giftcloud;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -28,6 +30,8 @@ public class fragmentoIndi extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private Handler handler = new Handler();
+    private View fishqlo;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -78,10 +82,114 @@ public class fragmentoIndi extends Fragment {
             indexHijo = getArguments().getInt("indexHijo");
         }
         ArrayList<ArrayList<Mision>> lista = MainActivity.listaDeContSubPesta.get(indexPadre);
-        ArrayList<Mision> lista1 = lista.get(indexHijo);
-        ListView lv = (ListView) vista.findViewById(R.id.listadeelementos);
-        AdaptadorListView adapter = new AdaptadorListView(getActivity(), lista1);
+        final ArrayList<Mision> lista1 = lista.get(indexHijo);
+        final ListView lv = vista.findViewById(R.id.listadeelementos);
+        fishqlo = vista;
+        final AdaptadorListView adapter = new AdaptadorListView(getActivity(), lista1);
         lv.setAdapter(adapter);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                if(lista1.get(i).isSelected)
+                {
+                    lista1.get(i).setSelected(false);
+                    lista1.get(i).setARealizar(false);
+                }
+                else
+                {
+                    lista1.get(i).setSelected(true);
+                    lista1.get(i).setARealizar(true);
+                }
+                adapter.updateRecords(lista1);
+        }});
+        Button boton = vista.findViewById(R.id.botonHacerMision);
+        boton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                for(int j=0; j<lista1.size(); j++)
+                {
+                    if(lista1.get(j).getARealizar())
+                    {
+                        final int mayo = j;
+                        new Thread(new Runnable()
+                        {
+                            public void run()
+                            {
+
+                                View vista = getViewByPosition(mayo, lv);
+                                final ProgressBar progressBar = vista.findViewById(R.id.progressBar);
+                                final TextView misionCompletada = vista.findViewById(R.id.misionCompletada);
+                                handler.post(new Runnable()
+                                {
+                                    public void run()
+                                    {
+                                        progressBar.setVisibility(View.VISIBLE);
+                                    }
+                                });
+                                for(int k=1; k<=100; k++)
+                                {
+
+                                    final int mayo = k;
+                                    handler.post(new Runnable()
+                                {
+                                    public void run()
+                                    {
+                                        progressBar.setProgress(mayo);
+                                    }
+                                });
+                                    try
+                                    {
+                                        Thread.sleep(10);
+                                    }
+                                    catch (InterruptedException e)
+                                    {
+                                        e.printStackTrace();
+                                    }
+                                }
+                                handler.post(new Runnable()
+                                {
+                                    public void run()
+                                    {
+                                        progressBar.setVisibility(View.INVISIBLE);
+                                    }
+                                });
+                                handler.post(new Runnable()
+                                {
+                                    public void run()
+                                    {
+                                        misionCompletada.setVisibility(View.VISIBLE);
+                                    }
+                                });
+
+                            }
+                        }).start();
+
+                }
+                }
+            }
+        });
+//        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+//            {
+//                final int pos = position;
+//                Intent intent = new Intent(getContext(), perfilMisionActivity.class);
+//                Mision misionElegida = listaDeMisiones.get(pos);
+//                String nombreMision = misionElegida.getNombre();
+//                String descripcionMision = misionElegida.getDescripcion();
+//                String nombreImagen = misionElegida.getNombreImagen();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("nombre", nombreMision);
+//                bundle.putString("descripcion", descripcionMision);
+//                bundle.putString("nombreImagen", nombreImagen);
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+//            }
+//        });
         return vista;
     }
 
@@ -123,4 +231,18 @@ public class fragmentoIndi extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    public View getViewByPosition(int pos, ListView listView) {
+        final int firstListItemPosition = listView.getFirstVisiblePosition();
+        final int lastListItemPosition = firstListItemPosition + listView.getChildCount() - 1;
+
+        if (pos < firstListItemPosition || pos > lastListItemPosition ) {
+            return listView.getAdapter().getView(pos, null, listView);
+        } else {
+            final int childIndex = pos - firstListItemPosition;
+            return listView.getChildAt(childIndex);
+        }
+    }
+
+
 }

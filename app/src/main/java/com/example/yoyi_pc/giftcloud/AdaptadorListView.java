@@ -2,10 +2,13 @@ package com.example.yoyi_pc.giftcloud;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -46,6 +49,12 @@ public class AdaptadorListView extends BaseAdapter {
         return position;
     }
 
+    public void updateRecords(ArrayList<Mision> users){
+        this.items = users;
+
+        notifyDataSetChanged();
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -65,11 +74,17 @@ public class AdaptadorListView extends BaseAdapter {
         description.setText(dir.getDescripcion());
 
         ImageView imagen = (ImageView) v.findViewById(R.id.imagen);
-
-
         Context context = imagen.getContext();
         int id = context.getResources().getIdentifier(dir.getNombreImagen(), "drawable", context.getPackageName());
         imagen.setImageResource(id);
+
+        ImageView boton = v.findViewById(R.id.boton);
+        if(dir.isSelected())
+            boton.setBackgroundResource(R.drawable.checked);
+        else
+        {
+            boton.setBackgroundResource(R.drawable.check);
+        }
 
         return v;
     }

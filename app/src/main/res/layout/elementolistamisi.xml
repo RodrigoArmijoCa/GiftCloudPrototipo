@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.example.yoyi_pc.giftcloud.fragmentoIndi">
 
     <ImageView
         android:id="@+id/imagen"
@@ -10,7 +12,7 @@
         android:layout_height="80sp"/>
     <TextView
         android:layout_marginLeft="100sp"
-        android:layout_width="wrap_content"
+        android:layout_width="180sp"
         android:layout_height="wrap_content"
         android:text="Texto Frase"
         android:id="@+id/descripcion"
@@ -18,7 +20,7 @@
 
     <TextView
         android:layout_marginLeft="100sp"
-        android:layout_width="wrap_content"
+        android:layout_width="180sp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Titulo Frase"
@@ -26,5 +28,34 @@
         android:textSize="21sp"
         android:textColor="#f65034"
         android:layout_alignParentTop="true"/>
+
+    <ProgressBar
+    android:layout_below="@id/descripcion"
+    android:layout_marginLeft="100sp"
+    android:id="@+id/progressBar"
+    style="?android:attr/progressBarStyleHorizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:indeterminate="false"
+    android:max="100"
+    android:minHeight="50dp"
+    android:minWidth="200dp"
+    android:progress="1"
+    android:visibility="invisible"/>
+
+    <TextView
+        android:layout_below="@id/descripcion"
+        android:layout_marginLeft="100sp"
+        android:id="@+id/misionCompletada"
+        android:text="Mision Completada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/boton"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_toRightOf="@+id/descripcion"/>
 
 </RelativeLayout>

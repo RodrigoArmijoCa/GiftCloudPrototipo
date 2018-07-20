@@ -8,21 +8,25 @@ import android.graphics.drawable.Drawable;
 
 public class Mision {
 
+    int id;
     String nombre;
     String descripcion;
     String nombreImagen;
+    boolean isSelected;
+    boolean arealizar;
 
-    public Mision(String nombre, String descripcion)
+    public Mision(int id, String nombre, String descripcion, String nombreImagen)
     {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-    }
-
-    public Mision(String nombre, String descripcion, String nombreImagen)
-    {
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.nombreImagen = nombreImagen;
+        this.isSelected = false;
+    }
+
+    public int getId()
+    {
+        return this.id;
     }
 
     public String getNombre()
@@ -40,6 +44,12 @@ public class Mision {
         return this.nombreImagen;
     }
 
+    public boolean isSelected() {return this.isSelected;}
 
+    public void setSelected(boolean eleccion) {this.isSelected = eleccion;}
+
+    public void setARealizar(boolean eleccion) {this.arealizar = eleccion;}
+
+    public boolean getARealizar() {return arealizar;}
 
 }
