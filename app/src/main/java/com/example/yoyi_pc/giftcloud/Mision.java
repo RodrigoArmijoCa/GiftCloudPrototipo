@@ -12,8 +12,10 @@ public class Mision {
     String nombre;
     String descripcion;
     String nombreImagen;
+    int recompensa;
     boolean isSelected;
     boolean arealizar;
+    boolean noRealizada;
 
     public Mision(int id, String nombre, String descripcion, String nombreImagen)
     {
@@ -21,7 +23,9 @@ public class Mision {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.nombreImagen = nombreImagen;
+        this.recompensa = 2;
         this.isSelected = false;
+        this.noRealizada = true;
     }
 
     public int getId()
@@ -51,5 +55,13 @@ public class Mision {
     public void setARealizar(boolean eleccion) {this.arealizar = eleccion;}
 
     public boolean getARealizar() {return arealizar;}
+
+    public int getRecompensa(){return this.recompensa;}
+
+    public void setRecompensa(int recompensa){this.recompensa = recompensa;}
+
+    public boolean getnoRealizada(){return this.noRealizada;}
+
+    public void setnoRealizada(boolean noRealizada){this.noRealizada = noRealizada;}
 
 }

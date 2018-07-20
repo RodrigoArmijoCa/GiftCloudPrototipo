@@ -1,6 +1,7 @@
 package com.example.yoyi_pc.giftcloud;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -111,8 +112,10 @@ public class fragmentoIndi extends Fragment {
             {
                 for(int j=0; j<lista1.size(); j++)
                 {
-                    if(lista1.get(j).getARealizar())
+                    if(lista1.get(j).getARealizar() && lista1.get(j).getnoRealizada())
                     {
+                        lista1.get(j).setnoRealizada(false);
+                        final int recompensa = lista1.get(j).getRecompensa();
                         final int mayo = j;
                         new Thread(new Runnable()
                         {
@@ -169,7 +172,7 @@ public class fragmentoIndi extends Fragment {
                                     {
                                     TextView text = MainActivity.vista.findViewById(R.id.valorGiftCoins);
                                     int valor = Integer.parseInt((String) text.getText());
-                                    valor += 1;
+                                    valor += recompensa;
                                     String valorString = valor + "";
                                     text.setText(valorString);
                                     }
@@ -181,24 +184,23 @@ public class fragmentoIndi extends Fragment {
                 }
             }
         });
-//        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-//            {
-//                final int pos = position;
-//                Intent intent = new Intent(getContext(), perfilMisionActivity.class);
-//                Mision misionElegida = listaDeMisiones.get(pos);
-//                String nombreMision = misionElegida.getNombre();
-//                String descripcionMision = misionElegida.getDescripcion();
-//                String nombreImagen = misionElegida.getNombreImagen();
-//                Bundle bundle = new Bundle();
-//                bundle.putString("nombre", nombreMision);
-//                bundle.putString("descripcion", descripcionMision);
-//                bundle.putString("nombreImagen", nombreImagen);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
-//            }
-//        });
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        @Override
+        public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int pos, long id) {
+                Intent intent = new Intent(getContext(), perfilMisionActivity.class);
+                Mision misionElegida = lista1.get(pos);
+                String nombreMision = misionElegida.getNombre();
+                String descripcionMision = misionElegida.getDescripcion();
+                String nombreImagen = misionElegida.getNombreImagen();
+                Bundle bundle = new Bundle();
+                bundle.putString("nombre", nombreMision);
+                bundle.putString("descripcion", descripcionMision);
+                bundle.putString("nombreImagen", nombreImagen);
+                intent.putExtras(bundle);
+                startActivity(intent);
+                return true;
+            }
+        });
         return vista;
     }
 

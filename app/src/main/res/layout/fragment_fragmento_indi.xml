@@ -11,8 +11,12 @@
         android:layout_height="350sp" />
 
     <Button
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:id="@+id/botonHacerMision"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/botonHacerMision"
+        android:layout_marginLeft="90sp"
+        android:textSize="10sp"
+        android:theme="@style/boton"
+        android:text="Realizar en segundo plano"/>
 
 </LinearLayout>
