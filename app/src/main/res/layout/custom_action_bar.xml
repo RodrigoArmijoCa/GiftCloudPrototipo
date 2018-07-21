@@ -5,20 +5,28 @@
     android:orientation="horizontal">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo:"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:padding="10dp"
+            android:layout_marginRight="1sp"/>
+
+        <TextView
             android:id="@+id/valorGiftCoins"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textStyle="bold"
-            android:padding="10dp" />
+            android:textSize="30sp"
+            android:padding="10dp"
+            android:layout_marginRight="1sp"/>
 
-        <TextView
+        <ImageView
+            android:layout_marginRight="50sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GiftCoins"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textStyle="bold"
-            android:padding="10dp" />
+            android:src="@drawable/logogiftcoin"/>
 
 </LinearLayout>

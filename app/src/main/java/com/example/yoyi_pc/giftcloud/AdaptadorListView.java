@@ -12,6 +12,8 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class AdaptadorListView extends BaseAdapter {
@@ -79,6 +81,11 @@ public class AdaptadorListView extends BaseAdapter {
         imagen.setImageResource(id);
 
         ImageView boton = v.findViewById(R.id.boton);
+        TextView misionCompletada = v.findViewById(R.id.misionCompletada);
+        if(!dir.getnoRealizada())
+        {
+            misionCompletada.setVisibility(View.VISIBLE);
+        }
         if(dir.isSelected())
             boton.setBackgroundResource(R.drawable.checked);
         else
