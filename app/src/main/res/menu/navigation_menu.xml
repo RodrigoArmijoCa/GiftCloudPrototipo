@@ -6,6 +6,11 @@
         android:icon="@drawable/ic_settings_black_24dp">
     </item>
     <item
+        android:id="@+id/datos"
+        android:title="Mis datos"
+        android:icon="@drawable/ic_settings_black_24dp">
+    </item>
+    <item
         android:id="@+id/tienda"
         android:title="Tienda"
         android:icon="@drawable/ic_add_shopping_cart_black_24dp">

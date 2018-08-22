@@ -1,5 +1,6 @@
 package com.example.yoyi_pc.giftcloud;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements fragmentoPesta.On
         abdt.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         NavigationView nav_view = (NavigationView) findViewById(R.id.nav_view);
+        nav_view.bringToFront();
         nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -51,11 +53,16 @@ public class MainActivity extends AppCompatActivity implements fragmentoPesta.On
                 {
                     Toast.makeText(MainActivity.this, "Mi perfil", Toast.LENGTH_SHORT).show();
                 }
+                else if(id == R.id.datos)
+                {
+                    Intent nuevoIntent = new Intent(MainActivity.this, DatosActivity.class);
+                    startActivity(nuevoIntent);
+                }
                 else if(id == R.id.tienda)
                 {
                     Toast.makeText(MainActivity.this, "Tienda", Toast.LENGTH_SHORT).show();
                 }
-                return true;
+                return false;
             }
         });
         iniciaNombrePesta();
