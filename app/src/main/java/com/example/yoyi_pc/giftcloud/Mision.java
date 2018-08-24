@@ -16,6 +16,9 @@ public class Mision {
     boolean isSelected;
     boolean arealizar;
     boolean noRealizada;
+    String empresaObjetivo;
+    String proposito;
+    String sensoresSolicitados;
 
     public Mision(int id, String nombre, String descripcion, String nombreImagen)
     {
@@ -26,6 +29,20 @@ public class Mision {
         this.recompensa = 2;
         this.isSelected = false;
         this.noRealizada = true;
+    }
+
+    public Mision(int id, String nombre, String descripcion, String nombreImagen, String empresaObjetivo, String proposito, String sensoresSolicitados)
+    {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.nombreImagen = nombreImagen;
+        this.recompensa = 2;
+        this.isSelected = false;
+        this.noRealizada = true;
+        this.empresaObjetivo = empresaObjetivo;
+        this.proposito = proposito;
+        this.sensoresSolicitados = sensoresSolicitados;
     }
 
     public int getId()
@@ -63,5 +80,11 @@ public class Mision {
     public boolean getnoRealizada(){return this.noRealizada;}
 
     public void setnoRealizada(boolean noRealizada){this.noRealizada = noRealizada;}
+
+    public String getEmpresa(){return this.empresaObjetivo;}
+
+    public String getProposito() {return this.proposito;}
+
+    public String getSensoresSolicitados() {return this.sensoresSolicitados;}
 
 }

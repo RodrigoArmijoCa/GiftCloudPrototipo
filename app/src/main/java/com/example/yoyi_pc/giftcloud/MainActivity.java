@@ -132,17 +132,17 @@ public class MainActivity extends AppCompatActivity implements fragmentoPesta.On
 
     public void iniciaNombrePesta()
     {
+        listaDeNomPesta.add("Sensores");
         listaDeNomPesta.add("Por objetivos");
         listaDeNomPesta.add("Por tipo de empresa");
-        listaDeNomPesta.add("Sensores");
     }
 
     public void iniciaNombreSubPesta()
     {
         ArrayList<String> nuevo = new ArrayList<String>();
-        nuevo.add("Social");
-        nuevo.add("Marketing");
-        nuevo.add("Publicidad Dirigida");
+        nuevo.add("Acelerometro");
+        nuevo.add("Barometro");
+        nuevo.add("De Luz");
         listaDeNomSubPesta.add(nuevo);
         ArrayList<String> nuevo1 = new ArrayList<String>();
         nuevo1.add("SFDL");
@@ -150,9 +150,9 @@ public class MainActivity extends AppCompatActivity implements fragmentoPesta.On
         nuevo1.add("Otro");
         listaDeNomSubPesta.add(nuevo1);
         ArrayList<String> nuevo2 = new ArrayList<String>();
-        nuevo2.add("Acelerometro");
-        nuevo2.add("Barometro");
-        nuevo2.add("De Luz");
+        nuevo2.add("Social");
+        nuevo2.add("Marketing");
+        nuevo2.add("Publicidad Dirigida");
         listaDeNomSubPesta.add(nuevo2);
     }
 
@@ -160,9 +160,9 @@ public class MainActivity extends AppCompatActivity implements fragmentoPesta.On
     {
         ArrayList<ArrayList<Mision>> primera = new ArrayList<ArrayList<Mision>>();
         ArrayList<Mision> anuevo = new ArrayList<Mision>();
-        Mision amision11 = new Mision(1,"NombreMision1Tipo1Pestana1", "DescripcionMision1Tipo1Pestana1", "logoempresa");
-        Mision amision12 = new Mision(2, "NombreMision2Tipo1Pestana1", "DescripcionMision2Tipo1Pestana1", "logoempresa");
-        Mision amision13 = new Mision(3, "NombreMision3Tipo1Pestana1", "DescripcionMision3Tipo1Pestana1", "logoempresa");
+        Mision amision11 = new Mision(1,"Estudio de Sismos", "La escuela de psicología de la Universidad de Santiago de Chile requiere del estudio del flujo cotidiano del personal estudiantil, con el objetivo de estudiar ubicaciones para la instalación de maquinas recreativas que tengan como el objetivo aliviar el estres del personal, para lo cual se le solicita el dato de posición en GPS por cada hora entre las 8:00 y 19:00 hrs, durante una semana.", "psico", "Escuela de Psicología de la Universidad de Santiago de Chile", "Estudio de rutas del estudiantado", "GPS");
+        Mision amision12 = new Mision(2, "Estudio de Sismos", "El centro sismológico nacional requiere de información de acceleremotros de smartphones con el fin de evaluar la predición de sismos en tiempos razonables, que tengan como objetivo alertar a la población", "csn", "CSN", "Estudio de sismos", "Acelerometro, GPS");
+        Mision amision13 = new Mision(3, "Predicción de tormentas", "La Dirección Meteorológica de Chile tiene el objetivo de realizar estudios que tengan como fin una mejorar la planificación para la construcción de calles ante tormentas y lluvias, para lo cual necesitan estudiar los comportamientos de la presión atmosférica durante todo un año, para lo cual por la Dirección Meteorológica de Chile le solicita poder recabar información del barómetro de su smartphone, una vez al dia por 2 semanas.", "dmc", "Dirección Meteorológica de Chile", "Estudio de lluvias y tormentas en Santiago", "Barómetro, GPS");
         anuevo.add(amision11);
         anuevo.add(amision12);
         anuevo.add(amision13);

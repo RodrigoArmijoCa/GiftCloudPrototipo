@@ -12,12 +12,11 @@
     android:id="@+id/dl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/AppTheme"
+    android:theme="@style/Theme.AppCompat"
     android:orientation="vertical">
 
         <android.support.design.widget.NavigationView
             android:layout_width="wrap_content"
-            android:theme="@style/AppTheme"
             android:layout_height="match_parent"
             android:id="@+id/nav_view"
             android:layout_gravity="start"
@@ -35,18 +34,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tablayout"
-            android:background="@color/BlueViolet"
+            android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
-            android:theme="@style/AppTheme">
-
+            android:theme="@style/Theme.AppCompat">
         </android.support.design.widget.TabLayout>
 
         <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:background="@color/LightCyan"
+            android:theme="@style/Theme.AppCompat"
             android:id="@+id/pager">
-
         </android.support.v4.view.ViewPager>
 
     </LinearLayout>

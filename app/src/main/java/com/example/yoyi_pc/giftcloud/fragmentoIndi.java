@@ -192,10 +192,16 @@ public class fragmentoIndi extends Fragment {
                 String nombreMision = misionElegida.getNombre();
                 String descripcionMision = misionElegida.getDescripcion();
                 String nombreImagen = misionElegida.getNombreImagen();
+                String empresaObjetivo = misionElegida.getEmpresa();
+                String proposito = misionElegida.getProposito();
+                String sensoresSolicitados = misionElegida.getSensoresSolicitados();
                 Bundle bundle = new Bundle();
                 bundle.putString("nombre", nombreMision);
                 bundle.putString("descripcion", descripcionMision);
                 bundle.putString("nombreImagen", nombreImagen);
+                bundle.putString("empresaObjetivo", empresaObjetivo);
+                bundle.putString("proposito", proposito);
+                bundle.putString("sensoresSolicitados", sensoresSolicitados);
                 intent.putExtras(bundle);
                 startActivity(intent);
                 return true;
