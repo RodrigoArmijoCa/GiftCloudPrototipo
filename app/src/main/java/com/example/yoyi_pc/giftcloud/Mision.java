@@ -2,6 +2,8 @@ package com.example.yoyi_pc.giftcloud;
 
 import android.graphics.drawable.Drawable;
 
+import java.util.ArrayList;
+
 /**
  * Created by Yoyi-PC on 17-07-2018.
  */
@@ -19,6 +21,7 @@ public class Mision {
     String empresaObjetivo;
     String proposito;
     String sensoresSolicitados;
+    ArrayList<Integer> mbMision;
 
     public Mision(int id, String nombre, String descripcion, String nombreImagen)
     {
@@ -31,7 +34,7 @@ public class Mision {
         this.noRealizada = true;
     }
 
-    public Mision(int id, String nombre, String descripcion, String nombreImagen, String empresaObjetivo, String proposito, String sensoresSolicitados)
+    public Mision(int id, String nombre, String descripcion, String nombreImagen, String empresaObjetivo, String proposito, String sensoresSolicitados, ArrayList<Integer> mbMision)
     {
         this.id = id;
         this.nombre = nombre;
@@ -43,6 +46,7 @@ public class Mision {
         this.empresaObjetivo = empresaObjetivo;
         this.proposito = proposito;
         this.sensoresSolicitados = sensoresSolicitados;
+        this.mbMision = mbMision;
     }
 
     public int getId()
@@ -86,5 +90,7 @@ public class Mision {
     public String getProposito() {return this.proposito;}
 
     public String getSensoresSolicitados() {return this.sensoresSolicitados;}
+
+    public ArrayList<Integer> getMbMision() {return this.mbMision;}
 
 }

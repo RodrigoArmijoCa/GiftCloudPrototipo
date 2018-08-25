@@ -27,9 +27,11 @@ public class MainActivity extends AppCompatActivity implements fragmentoPesta.On
     private ActionBarDrawerToggle abdt;
     static public ActionBar barritaSuperior;
     static public View vista;
+    static public ArrayList<Integer> cantidadesDeDatos = new ArrayList<Integer>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+         inicializarmblista();
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
@@ -160,9 +162,17 @@ public class MainActivity extends AppCompatActivity implements fragmentoPesta.On
     {
         ArrayList<ArrayList<Mision>> primera = new ArrayList<ArrayList<Mision>>();
         ArrayList<Mision> anuevo = new ArrayList<Mision>();
-        Mision amision11 = new Mision(1,"Estudio de Sismos", "La escuela de psicología de la Universidad de Santiago de Chile requiere del estudio del flujo cotidiano del personal estudiantil, con el objetivo de estudiar ubicaciones para la instalación de maquinas recreativas que tengan como el objetivo aliviar el estres del personal, para lo cual se le solicita el dato de posición en GPS por cada hora entre las 8:00 y 19:00 hrs, durante una semana.", "psico", "Escuela de Psicología de la Universidad de Santiago de Chile", "Estudio de rutas del estudiantado", "GPS");
-        Mision amision12 = new Mision(2, "Estudio de Sismos", "El centro sismológico nacional requiere de información de acceleremotros de smartphones con el fin de evaluar la predición de sismos en tiempos razonables, que tengan como objetivo alertar a la población", "csn", "CSN", "Estudio de sismos", "Acelerometro, GPS");
-        Mision amision13 = new Mision(3, "Predicción de tormentas", "La Dirección Meteorológica de Chile tiene el objetivo de realizar estudios que tengan como fin una mejorar la planificación para la construcción de calles ante tormentas y lluvias, para lo cual necesitan estudiar los comportamientos de la presión atmosférica durante todo un año, para lo cual por la Dirección Meteorológica de Chile le solicita poder recabar información del barómetro de su smartphone, una vez al dia por 2 semanas.", "dmc", "Dirección Meteorológica de Chile", "Estudio de lluvias y tormentas en Santiago", "Barómetro, GPS");
+        ArrayList<Integer> aamision11list = crearListaInicializada();
+        aamision11list.set(0,50);
+        ArrayList<Integer> aamision12list = crearListaInicializada();
+        aamision12list.set(0,30);
+        aamision12list.set(1,20);
+        ArrayList<Integer> aamision13list = crearListaInicializada();
+        aamision13list.set(0,30);
+        aamision13list.set(2,40);
+        Mision amision11 = new Mision(1,"Estudio de Sismos", "La escuela de psicología de la Universidad de Santiago de Chile requiere del estudio del flujo cotidiano del personal estudiantil, con el objetivo de estudiar ubicaciones para la instalación de maquinas recreativas que tengan como el objetivo aliviar el estres del personal, para lo cual se le solicita el dato de posición en GPS por cada hora entre las 8:00 y 19:00 hrs, durante una semana.", "psico", "Escuela de Psicología de la Universidad de Santiago de Chile", "Estudio de rutas del estudiantado", "GPS", aamision11list);
+        Mision amision12 = new Mision(2, "Estudio de Sismos", "El centro sismológico nacional requiere de información de acceleremotros de smartphones con el fin de evaluar la predición de sismos en tiempos razonables, que tengan como objetivo alertar a la población", "csn", "CSN", "Estudio de sismos", "Acelerometro, GPS", aamision12list);
+        Mision amision13 = new Mision(3, "Predicción de tormentas", "La Dirección Meteorológica de Chile tiene el objetivo de realizar estudios que tengan como fin una mejorar la planificación para la construcción de calles ante tormentas y lluvias, para lo cual necesitan estudiar los comportamientos de la presión atmosférica durante todo un año, para lo cual por la Dirección Meteorológica de Chile le solicita poder recabar información del barómetro de su smartphone, una vez al dia por 2 semanas.", "dmc", "Dirección Meteorológica de Chile", "Estudio de lluvias y tormentas en Santiago", "Barómetro, GPS", aamision13list);
         anuevo.add(amision11);
         anuevo.add(amision12);
         anuevo.add(amision13);
@@ -236,6 +246,26 @@ public class MainActivity extends AppCompatActivity implements fragmentoPesta.On
         cnuevo2.add(cmision33);
         tercera.add(cnuevo2);
         listaDeContSubPesta.add(tercera);
+    }
+
+    public ArrayList<Integer> crearListaInicializada()
+    {
+        ArrayList<Integer> listanueva = new ArrayList<Integer>();
+        int i;
+        for(i = 0; i < 5; i++)
+        {
+            listanueva.add(0);
+        }
+        return listanueva;
+    }
+
+    public void inicializarmblista()
+    {
+        int i;
+        for(i = 0; i < 5; i++)
+        {
+            cantidadesDeDatos.add(0);
+        }
     }
 
 

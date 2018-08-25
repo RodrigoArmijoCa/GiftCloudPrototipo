@@ -170,6 +170,11 @@ public class fragmentoIndi extends Fragment {
                                 {
                                     public void run()
                                     {
+                                        int m = 0;
+                                        for (m=0; m<5; m++)
+                                        {
+                                            MainActivity.cantidadesDeDatos.set(m,MainActivity.cantidadesDeDatos.get(m)+lista1.get(mayo).getMbMision().get(m));
+                                        }
                                     TextView text = MainActivity.vista.findViewById(R.id.valorGiftCoins);
                                     int valor = Integer.parseInt((String) text.getText());
                                     valor += recompensa;
