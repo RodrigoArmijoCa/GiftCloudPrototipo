@@ -35,13 +35,13 @@ public class Mision {
         this.noRealizada = true;
     }
 
-    public Mision(int id, String nombre, String descripcion, String nombreImagen, String empresaObjetivo, String proposito, String sensoresSolicitados, ArrayList<Integer> mbMision, String informacionResu)
+    public Mision(int id, String nombre, String descripcion, Integer recompensa, String nombreImagen, String empresaObjetivo, String proposito, String sensoresSolicitados, ArrayList<Integer> mbMision, String informacionResu)
     {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.nombreImagen = nombreImagen;
-        this.recompensa = 2;
+        this.recompensa = recompensa;
         this.isSelected = false;
         this.noRealizada = true;
         this.empresaObjetivo = empresaObjetivo;

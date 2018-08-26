@@ -82,6 +82,10 @@ public class AdaptadorListView extends BaseAdapter {
 
         ImageView boton = v.findViewById(R.id.boton);
         TextView misionCompletada = v.findViewById(R.id.misionCompletada);
+
+        TextView textRecompensa = v.findViewById(R.id.recompensa);
+        String recompensa = "" + dir.getRecompensa();
+        textRecompensa.setText(recompensa);
         if(!dir.getnoRealizada())
         {
             misionCompletada.setVisibility(View.VISIBLE);
