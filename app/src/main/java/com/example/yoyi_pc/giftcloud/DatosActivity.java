@@ -25,7 +25,7 @@ public class DatosActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.datos_activity);
         DecoView arcView = (DecoView)findViewById(R.id.grafSensoresUsados);
-        if (MainActivity.cantidadesDeDatos.size() == 0)
+        if (MainActivity.cantidadesDeDatos.get(0) == 0)
         {
             TextView textoDeEntregadoNada = findViewById(R.id.textoDeNoEntregadoNada);
             textoDeEntregadoNada.setVisibility(View.VISIBLE);

@@ -200,6 +200,7 @@ public class fragmentoIndi extends Fragment {
                 String empresaObjetivo = misionElegida.getEmpresa();
                 String proposito = misionElegida.getProposito();
                 String sensoresSolicitados = misionElegida.getSensoresSolicitados();
+                String informacionResu = misionElegida.getInformacionResu();
                 Bundle bundle = new Bundle();
                 bundle.putString("nombre", nombreMision);
                 bundle.putString("descripcion", descripcionMision);
@@ -207,6 +208,7 @@ public class fragmentoIndi extends Fragment {
                 bundle.putString("empresaObjetivo", empresaObjetivo);
                 bundle.putString("proposito", proposito);
                 bundle.putString("sensoresSolicitados", sensoresSolicitados);
+                bundle.putString("informacionResu", informacionResu);
                 intent.putExtras(bundle);
                 startActivity(intent);
                 return true;

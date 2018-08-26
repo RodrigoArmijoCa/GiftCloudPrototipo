@@ -19,6 +19,7 @@ public class perfilMisionActivity  extends AppCompatActivity
         String empresaObjetivo = getIntent().getStringExtra("empresaObjetivo");
         String proposito = getIntent().getStringExtra("proposito");
         String sensoresSolicitados = getIntent().getStringExtra("sensoresSolicitados");
+        String informacionResu = getIntent().getStringExtra("informacionResu");
         TextView nombreElemento = findViewById(R.id.nombreMision);
         nombreElemento.setText(nombre);
         TextView descripcionElemento = findViewById(R.id.descripcionMision);
@@ -31,6 +32,8 @@ public class perfilMisionActivity  extends AppCompatActivity
         empresaObjet.setText(empresaObjetivo);
         TextView sensSolic = findViewById(R.id.sensoresSolicitados);
         sensSolic.setText(sensoresSolicitados);
+        TextView textinformacionResu = findViewById(R.id.informacionResu);
+        textinformacionResu.setText(informacionResu);
 
     }
 

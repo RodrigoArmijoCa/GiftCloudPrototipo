@@ -22,6 +22,7 @@ public class Mision {
     String proposito;
     String sensoresSolicitados;
     ArrayList<Integer> mbMision;
+    String informacionResu;
 
     public Mision(int id, String nombre, String descripcion, String nombreImagen)
     {
@@ -34,7 +35,7 @@ public class Mision {
         this.noRealizada = true;
     }
 
-    public Mision(int id, String nombre, String descripcion, String nombreImagen, String empresaObjetivo, String proposito, String sensoresSolicitados, ArrayList<Integer> mbMision)
+    public Mision(int id, String nombre, String descripcion, String nombreImagen, String empresaObjetivo, String proposito, String sensoresSolicitados, ArrayList<Integer> mbMision, String informacionResu)
     {
         this.id = id;
         this.nombre = nombre;
@@ -47,6 +48,7 @@ public class Mision {
         this.proposito = proposito;
         this.sensoresSolicitados = sensoresSolicitados;
         this.mbMision = mbMision;
+        this.informacionResu = informacionResu;
     }
 
     public int getId()
@@ -92,5 +94,7 @@ public class Mision {
     public String getSensoresSolicitados() {return this.sensoresSolicitados;}
 
     public ArrayList<Integer> getMbMision() {return this.mbMision;}
+
+    public String getInformacionResu() {return this.informacionResu;}
 
 }

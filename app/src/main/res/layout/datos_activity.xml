@@ -41,5 +41,13 @@
             android:id="@+id/grafSensoresUsados"
             android:visibility="invisible"/>
 
+        <com.hookedonplay.decoviewlib.DecoView
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:layout_marginLeft="60sp"
+            android:layout_marginTop="250sp"
+            android:id="@+id/grafSensoresUsadosmb"
+            android:visibility="invisible"/>
+
 
 </RelativeLayout>
