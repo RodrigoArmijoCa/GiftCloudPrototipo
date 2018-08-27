@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity implements fragmentoPesta.On
                 }
                 else if(id == R.id.tienda)
                 {
-                    Toast.makeText(MainActivity.this, "Tienda", Toast.LENGTH_SHORT).show();
+                    Intent nuevoIntent = new Intent(MainActivity.this, TiendaActivity.class);
+                    startActivity(nuevoIntent);
                 }
                 return false;
             }
