@@ -1,12 +1,14 @@
 package com.example.yoyi_pc.giftcloud;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -70,13 +72,33 @@ public class TiendaFragment extends Fragment {
         Producto producto1 = new Producto("A", "A", "mayo", 12);
         Producto producto2 = new Producto("B", "B", "mayo", 13);
         Producto producto3 = new Producto("C", "C", "mayo", 14);
-        ArrayList<Producto> lista = new ArrayList<Producto>();
+        final ArrayList<Producto> lista = new ArrayList<Producto>();
         lista.add(producto1);
         lista.add(producto2);
         lista.add(producto3);
         final ListView lv = vista.findViewById(R.id.listadeelementostienda);
         final AdaptadorTienda adapter = new AdaptadorTienda(getActivity(), lista);
         lv.setAdapter(adapter);
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int pos, long id) {
+                Intent intent = new Intent(getContext(), PerfilProductoActivity.class);
+                Producto productoSeleccionado = lista.get(pos);
+                String nombreProducto = productoSeleccionado.getNombre();
+                String descripcionProducto = productoSeleccionado.getDescripcion();
+                String nombreImagen = productoSeleccionado.getNombreImagenProducto();
+                Integer precio = productoSeleccionado.getPrecio();
+                String strprecio = precio + "";
+                Bundle bundle = new Bundle();
+                bundle.putString("nombre", nombreProducto);
+                bundle.putString("descripcion", descripcionProducto);
+                bundle.putString("nombreImagen", nombreImagen);
+                bundle.putString("strprecio", strprecio);
+                intent.putExtras(bundle);
+                startActivity(intent);
+                return true;
+            }
+        });
         return vista;
     }
 

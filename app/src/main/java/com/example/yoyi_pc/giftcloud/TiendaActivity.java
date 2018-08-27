@@ -16,6 +16,8 @@ public class TiendaActivity extends AppCompatActivity implements TiendaFragment.
     static ArrayList<String> listaDeNomPesta = new ArrayList<String>();
     static public ActionBar barritaSuperior;
     static public View vista;
+    static public Integer flag = 0;
+    TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,22 +53,26 @@ public class TiendaActivity extends AppCompatActivity implements TiendaFragment.
 
             }
         });
+
+        flag = 1;
     }
 
     public void configTabs(TabLayout tab, int numTabs, ArrayList<String> lista)
     {
-        for(int i=0; i<numTabs; i++)
-        {
-            tab.addTab(tab.newTab().setText(lista.get(i)));
-        }
-        tab.setTabGravity(tab.GRAVITY_FILL);
+            for (int i = 0; i < numTabs; i++) {
+                tab.addTab(tab.newTab().setText(lista.get(i)));
+            }
+            tab.setTabGravity(tab.GRAVITY_FILL);
     }
 
     public void iniciaNombrePesta()
     {
-        listaDeNomPesta.add("Nuevos");
-        listaDeNomPesta.add("Los mas vendidos");
-        listaDeNomPesta.add("Los mejores evaluados");
+        if (listaDeNomPesta.size() != 3)
+        {
+            listaDeNomPesta.add("Nuevos");
+            listaDeNomPesta.add("Los mas vendidos");
+            listaDeNomPesta.add("Los mejores evaluados");
+        }
     }
 
     public void confAdaptadorPag(PageAdapter adap, int cant)
