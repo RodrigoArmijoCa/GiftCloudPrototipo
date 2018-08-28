@@ -69,9 +69,9 @@ public class TiendaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_tienda, container, false);
-        Producto producto1 = new Producto("A", "A", "mayo", 12);
-        Producto producto2 = new Producto("B", "B", "mayo", 13);
-        Producto producto3 = new Producto("C", "C", "mayo", 14);
+        Producto producto1 = new Producto("Batería Externa Sony 5.800mAh Negra", "Diseño compacto y ligero te permitirá llevarla contigo a donde quiera que vayas con una capacidad de 5.800 mAh de intensidad.", "bateriaexterna", 12);
+        Producto producto2 = new Producto("Asistente de voz Wifi Alexa Echo (2da Generación)", "Echo (2nd Gen) tiene un nuevo parlante, un nuevo diseño. Echo se conecta a Alexa para reproducir música, realizar llamadas, configurar alarmas y temporizadores de música, hacer preguntas, controlar dispositivos domésticos inteligentes y mucho más, al instante.", "alexa", 120);
+        Producto producto3 = new Producto("Carga BIP de $4000", "Carga un saldo de $4000 en la tarjeta de BIP que tengas enlazada a tu cuenta de GiftCloud", "cargabip4000", 14);
         final ArrayList<Producto> lista = new ArrayList<Producto>();
         lista.add(producto1);
         lista.add(producto2);

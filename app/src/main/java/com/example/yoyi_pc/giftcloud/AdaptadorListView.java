@@ -70,10 +70,20 @@ public class AdaptadorListView extends BaseAdapter {
         Mision dir = items.get(position);
 
         TextView title = (TextView) v.findViewById(R.id.nombre);
-        title.setText(dir.getNombre());
+        String strnombreProducto = dir.getNombre();
+        if (strnombreProducto.length() > 40)
+        {
+            strnombreProducto = strnombreProducto.substring(0,20) + "...";
+        }
+        title.setText(strnombreProducto);
 
         TextView description = (TextView) v.findViewById(R.id.descripcion);
-        description.setText(dir.getDescripcion());
+        String strdescripcionProducto = dir.getDescripcion();
+        if (strdescripcionProducto.length() > 120)
+        {
+            strdescripcionProducto = strdescripcionProducto.substring(0,60) + "...";
+        }
+        description.setText(strdescripcionProducto);
 
         ImageView imagen = (ImageView) v.findViewById(R.id.imagen);
         Context context = imagen.getContext();

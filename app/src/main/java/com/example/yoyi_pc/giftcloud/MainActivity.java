@@ -60,9 +60,6 @@ public class MainActivity extends AppCompatActivity implements fragmentoPesta.On
                     Intent nuevoIntent = new Intent(MainActivity.this, DatosActivity.class);
                     startActivity(nuevoIntent);
                 }
-                else if(id == R.id.datos)
-                {
-                }
                 else if(id == R.id.tienda)
                 {
                     Intent nuevoIntent = new Intent(MainActivity.this, TiendaActivity.class);
@@ -136,12 +133,13 @@ public class MainActivity extends AppCompatActivity implements fragmentoPesta.On
 
     public void iniciaNombrePesta()
     {
-        if (listaDeNomPesta.size() == 0)
+        if (listaDeNomSubPesta.size() == 0)
         {
             listaDeNomPesta.add("Sensores");
             listaDeNomPesta.add("Por objetivos");
             listaDeNomPesta.add("Por tipo de empresa");
         }
+
     }
 
     public void iniciaNombreSubPesta()

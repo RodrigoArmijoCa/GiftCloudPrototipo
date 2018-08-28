@@ -71,8 +71,18 @@ public class AdaptadorTienda extends BaseAdapter {
         TextView nombreProducto = (TextView) v.findViewById(R.id.nombreProducto);
         TextView descripcionProducto = (TextView) v.findViewById(R.id.descripcionProducto);
         TextView precioProducto = (TextView) v.findViewById(R.id.precioProducto);
-        nombreProducto.setText(dir.getNombre());
-        descripcionProducto.setText(dir.getDescripcion());
+        String strnombreProducto = dir.getNombre();
+        String strdescripcionProducto = dir.getDescripcion();
+        if (strnombreProducto.length() > 30)
+        {
+            strnombreProducto = strnombreProducto.substring(0,20) + "...";
+        }
+        if (strdescripcionProducto.length() > 60)
+        {
+            strdescripcionProducto = strdescripcionProducto.substring(0,60) + "...";
+        }
+        nombreProducto.setText(strnombreProducto);
+        descripcionProducto.setText(strdescripcionProducto);
         String precio = dir.getPrecio() + "";
         precioProducto.setText(precio);
         ImageView imagen = (ImageView) v.findViewById(R.id.imagenProducto);

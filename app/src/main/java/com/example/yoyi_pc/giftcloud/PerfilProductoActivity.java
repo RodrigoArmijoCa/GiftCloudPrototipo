@@ -26,9 +26,12 @@ public class PerfilProductoActivity extends AppCompatActivity
         setContentView(R.layout.activity_perfil_producto);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.custom_action_bar);
+        getSupportActionBar().setCustomView(R.layout.custom_action_bar3);
         barritaSuperior = getSupportActionBar();
         vista = getSupportActionBar().getCustomView();
+        TextView mayo = vista.findViewById(R.id.valorGiftCoins3);
+        TextView otro = MainActivity.vista.findViewById(R.id.valorGiftCoins);
+        mayo.setText(otro.getText());
         String nombre = getIntent().getStringExtra("nombre");
         String descripcion = getIntent().getStringExtra("descripcion");
         String nombreImagen = getIntent().getStringExtra("nombreImagen");
@@ -61,10 +64,12 @@ public class PerfilProductoActivity extends AppCompatActivity
                                 if (valor >= precio)
                                 {
                                     TextView text2 = TiendaActivity.vista.findViewById(R.id.valorGiftCoins2);
+                                    TextView text3 = findViewById(R.id.valorGiftCoins3);
                                     valor -= precio;
                                     String valorString = valor + "";
                                     text.setText(valorString);
                                     text2.setText(valorString);
+                                    text3.setText(valorString);
                                     dialogo.setMessage("El producto ha sido canjeado correctamente, y sera despachado prontamente");
                                     dialogo.setTitle("Transacción Completada");
                                     dialogo.show();
